@@ -1,0 +1,30 @@
+﻿services:
+  cleanarchitecture.api:
+    image: cleanarchitecture.api
+    build:
+      context: .
+      dockerfile: CleanArchitecture.Api/Dockerfile
+    depends_on:
+      - postgres
+    networks:
+      - boilerplate
+        
+  postgres:
+    image: postgres:15.15-trixie
+    container_name: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: boilerplate
+    ports:
+      - '5432:5432'
+    command: [ 'postgres', '-c', 'wal_level=logical' ]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - boilerplate
+networks:
+  boilerplate:
+
+volumes:
+  pgdata:

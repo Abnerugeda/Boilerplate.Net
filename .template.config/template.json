@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Abner Ugeda",
+  "classifications": [ "CleanArchitecture", "Microservice", "DDD" ],
+  "name": "Meu Template Clean Architecture",
+  "description": "Template para microservices com Clean Architecture",
+  "identity": "Boilerplate.Net",
+  "shortName": "clean-arch",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "CleanArchitecture",
+  "preferNameDirectory": true,
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "Framework alvo",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net10.0"
+        }
+      ],
+      "defaultValue": "net10.0"
+    }
+  }
+}
